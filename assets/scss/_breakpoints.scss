@@ -1,0 +1,21 @@
+/* Breakpoints */
+
+/* Map */
+
+$breakpoints: (
+  tablets: 665px,
+  desktops: 1024px
+);
+
+/* Mixin */
+
+@mixin tablets {
+  @media screen and (min-width: map-get($breakpoints, tablets)){
+    @content;
+  }
+}
+@mixin desktops {
+  @media screen and (min-width: map-get($breakpoints, desktops )){
+    @content;
+  }   
+}
