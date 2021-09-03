@@ -1,0 +1,19 @@
+/* All Page Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0 auto;
+}
+
+/* Navbar Section */
+.navbar {
+  background-color: #E9ECEF !important;
+}
+
+.nav-item {
+  padding: 8px 20px !important;
+}
+/*# sourceMappingURL=main.css.map */
