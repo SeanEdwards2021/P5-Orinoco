@@ -8,6 +8,9 @@ body {
   margin: 0 auto;
 }
 
+/* Breakpoints */
+/* Map */
+/* Mixin */
 /* Navbar Section */
 .navbar {
   background-color: #E9ECEF !important;
@@ -15,5 +18,25 @@ body {
 
 .nav-item {
   padding: 8px 50px 8px 20px !important;
+}
+
+@media screen and (min-width: 1024px) {
+  .carousel-img {
+    height: 91vh;
+  }
+}
+
+.pb-5 {
+  padding: 1rem 0 3rem 0 !important;
+}
+
+h2 {
+  font-size: 35px;
+  font-weight: 600;
+}
+
+h2 span {
+  color: #cf7d45;
+  font-size: 3rem;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,11 +1,14 @@
 {
     "version": 3,
-    "mappings": "ACAA,0BAA0B;AAE1B,AAAA,IAAI,CAAC;EACH,eAAe,EAAE,MAAM;CACxB;;AAED,AAAA,IAAI,CAAC;EACH,WAAW,EAAE,oBAAoB;EACjC,MAAM,EAAE,MAAM;CACf;;AETD,oBAAoB;AAEpB,AAAA,OAAO,CAAC;EACN,gBAAgB,EDEC,OAAO,CCFY,UAAU;CAC/C;;AAED,AAAA,SAAS,CAAC;EACR,OAAO,EAAE,4BAA4B;CACtC",
+    "mappings": "ACAA,0BAA0B;AAE1B,AAAA,IAAI,CAAC;EACH,eAAe,EAAE,MAAM;CACxB;;AAED,AAAA,IAAI,CAAC;EACH,WAAW,EAAE,oBAAoB;EACjC,MAAM,EAAE,MAAM;CACf;;AETD,iBAAiB;AAEjB,SAAS;AAOT,WAAW;ACTX,oBAAoB;AAEpB,AAAA,OAAO,CAAC;EACN,gBAAgB,EFEC,OAAO,CEFY,UAAU;CAC/C;;AAED,AAAA,SAAS,CAAC;EACR,OAAO,EAAE,4BAA4B;CACtC;;ADSC,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,MAAM;EEhBpC,AAAA,aAAa,CAAC;IACZ,MAAM,EAAE,IAAI;GACb;;;ACHH,AAAA,KAAK,CAAC;EACJ,OAAO,EAAE,wBAAwB;CAClC;;AAED,AAAA,EAAE,CAAC;EACD,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,GAAG;CACjB;;AAED,AAAA,EAAE,CAAC,IAAI,CAAC;EACN,KAAK,EAAE,OAAO;EACd,SAAS,EAAE,IAAI;CAChB",
     "sources": [
         "../scss/main.scss",
         "../scss/_base.scss",
         "../scss/_variables.scss",
-        "../scss/_navbar.scss"
+        "../scss/_breakpoints.scss",
+        "../scss/_navbar.scss",
+        "../scss/_carousel.scss",
+        "../scss/_products.scss"
     ],
     "names": [],
     "file": "main.css"
