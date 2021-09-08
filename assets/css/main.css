@@ -21,19 +21,16 @@ body {
 .nav-item {
   padding: 8px 30px 8px 20px !important;
   font-size: 1.5rem;
-  color: #FFFFFF !important;
 }
 
-@media screen and (min-width: 1024px) {
-  .carousel-img {
-    height: 100vh;
+@media screen and (min-width: 665px) {
+  .nav-item {
+    color: #FFFFFF !important;
   }
 }
 
 #content {
-  position: absolute;
   width: 100%;
-  top: 0;
 }
 
 .btn-secondary {
@@ -43,6 +40,19 @@ body {
 .carouselButton {
   color: #FFFFFF;
   text-transform: uppercase;
+}
+
+@media screen and (min-width: 665px) {
+  #content {
+    position: absolute;
+    top: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .carousel-img {
+    height: 100vh;
+  }
 }
 
 .pb-5 {
