@@ -1,5 +1,6 @@
 .pb-5 {
-  padding: 1rem 0 3rem 0 !important;
+  padding: 1.5rem 0 0.5rem 0 !important;
+  margin: 0 !important;
 }
 
 h2 {
@@ -11,3 +12,181 @@ h2 span {
   color: #cf7d45;
   font-size: 3rem;
 }
+
+#productContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.product {
+  position: relative;
+
+  &Card {
+    position: relative;
+    width: 345px;
+    height: 450px;
+    background:#232323;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  &Card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #786e62;
+    clip-path: circle(150px at 80% 20%);
+    transition: 0.5s ease-in-out;
+  }
+
+  &Card:hover:before {
+    clip-path: circle(300px at 80% -20%);
+  }
+
+  &Card:after {
+    content: 'Orinoco';
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    font-size: 6em;
+    font-weight: 800;
+    font-style: italic;
+    color: rgba(255,255,255,0.07);
+  }
+
+  &ImgBox {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 10000;
+    width: 100%;
+    height: 220px;
+    transition: 0.5s;
+  }
+
+  &ImgBox:hover {
+    top: 0%;
+    transform: translateY(0%);
+  }
+
+  &Img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+    width: 270px;
+
+    &Button {
+      position: absolute;
+      top: 70%;
+      left: 65%;
+      width: 50px;
+      height: 50px;
+      background: #fbfbfb;
+      border: 1px solid #eee;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    &Add {
+      max-width: 100%;
+    }
+  }
+
+  &ContentBox {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+
+    h2 {
+      position: relative;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #FFFFFF;
+    }
+
+    a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #FFFFFF;
+      border-radius: 4px;
+      margin-top: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      color: #111;
+      opacity: 0;
+      transform: translateY(50px);
+      transform: 0.5s;
+    }
+
+    a:hover {
+      opacity: 1;
+      transform: translateY(0px);
+      transition-delay: 0.75s;
+    }
+
+  }
+
+  &ContentBox:hover {
+    height: 210px;
+  }
+
+  &Size, &Color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    transition: 0.5s;
+
+    h3 {
+      color: #FFFFFF;
+      font-weight: 300;
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin-right: 10px;
+    }
+    
+    span {
+      width: 26px;
+      height: 26px;
+      text-align: center;
+      line-height: 26px;
+      font-size: 14px;
+      display: inline-block;
+      color: #111;
+      background: #FFFFFF;
+      margin: 0 5px;
+      transition: 0.5s;
+      color: #111;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    span:hover {
+      background: #FF0000;
+    }
+
+  }
+
+}
+
+.col-product {
+  padding: 15px !important;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+hr {
+  border: 1px solid #cf7d45;
+}
+

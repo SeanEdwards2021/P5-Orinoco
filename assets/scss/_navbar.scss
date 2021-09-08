@@ -1,9 +1,12 @@
 /* Navbar Section */
 
 .navbar {
-  background-color: $color-background !important;
+  background:transparent !important;
+  z-index:9; 
 }
 
 .nav-item {
-  padding: 8px 50px 8px 20px !important;
+  padding: 8px 30px 8px 20px !important;
+  font-size: 1.5rem;
+  color: $white !important;
 }
