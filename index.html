@@ -23,7 +23,7 @@
   
   </head>
   
-  <body>
+  <body onload="getProducts()">
 
     <!-- START OF HEADER SECTION -->
     <header>
@@ -32,7 +32,7 @@
       <div id="navbar">
         <nav class="navbar navbar-expand-md navbar-light bg-light">
           <a class="navbar-brand " href="index.html">
-            <img src="./assets/images/Orinoco-navbar.jpg" alt="Logo Orinoco" class="logo" style="height: 50px;">
+            <img src="./assets/images/orinoco-navbar.png" alt="Logo Orinoco" class="logo" style="height: 50px;">
           </a>
           <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -69,7 +69,7 @@
                 fugit odit quos et sunt laboriosam eum tenetur doloremque totam porro veniam harum earum quis distinctio incidunt quidem soluta. 
                 Ex, rem similique.
               </p>
-              <button>View All Products</button>
+              <button class="btn btn-secondary"><a class="carouselButton" href="#product-section">View All Products</a></button>
             </div>
           </div>
           <div class="carousel-item">
@@ -80,7 +80,7 @@
                 fugit odit quos et sunt laboriosam eum tenetur doloremque totam porro veniam harum earum quis distinctio incidunt quidem soluta. 
                 Ex, rem similique.
               </p>
-              <button>View All Products</button>
+              <button class="btn btn-secondary"><a class="carouselButton" href="#product-section">View All Products</a></button>
             </div>
           </div>
           <div class="carousel-item">
@@ -91,7 +91,7 @@
                 fugit odit quos et sunt laboriosam eum tenetur doloremque totam porro veniam harum earum quis distinctio incidunt quidem soluta. 
                 Ex, rem similique.
               </p>
-              <button>View All Products</button>
+              <button class="btn btn-secondary"><a class="carouselButton" href="#product-section">View All Products</a></button>
             </div>
           </div>
         </div>
@@ -107,21 +107,42 @@
       <!-- END OF CAROUSEL SECTION -->
 
       <!-- START OF PRODUCTS SECTION -->
-      <h2 class="text-center pb-5">our <span>P</span>roducts</h2>
+      <div id="product-section" class="container">
+        <h2 class="text-center pb-5">our <span>P</span>roducts</h2>
+        <div id="productContainer" class="row">
+        </div>
+        <hr>
+      </div>
       <!-- END OF PRODUCTS SECTION -->
       
+      <!-- START OF FOOTER SECTION -->
+      <footer>
+        <div id="footer" >
+          <div class=" social">
+            <a href="https://www.facebook.com"><img class="social-icons" src="./assets/images/facebook.png" alt="facebook"></a>
+            <a href="https://www.instagram.com"><img class="social-icons" src="./assets/images/instagram.png" alt="instagram" class="img-insta"></a>
+            <a href="https://www.twitter.com"><img class="social-icons" src="./assets/images/twitter.png" alt="twitter"></a>
+            <a href="https://www.youtube.com"><img class="social-icons" src="./assets/images/youtube.png" alt="youtube"></a>
+          </div>
+          <ul class="list-inline">
+            <li class="list-inline-item"><a class="footer-link" href="index.html">Home</a></li>
+            <li class="list-inline-item"><a class="footer-link" href="#">Services</a></li>
+            <li class="list-inline-item"><a class="footer-link" href="#">About</a></li>
+            <li class="list-inline-item"><a class="footer-link" href="#">Terms</a></li>
+            <li class="list-inline-item"><a class="footer-link" href="#">Privacy Policy</a></li>
+          </ul>
+          <p class="copyright">developed by © <a class="footer-link" href="#" target="blank">Sean Edwards</a></p>
+        </div>
+      </footer>
+      <!-- END OF FOOTER SECTION -->
+
     </section>
     <!-- END OF CONTENT WRAPPER SECTION -->
-    
-    <!-- START OF FOOTER SECTION -->
-    <footer>
-
-    </footer>
-    <!-- END OF FOOTER SECTION -->
 
     <!-- BOOTSTRAP JS FILES -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="./assets/js/homePage.js"></script>
   </body>
 </html>
