@@ -1,6 +1,20 @@
 @include desktops {
   .carousel-img {
-    height: 91vh;
+    height: 100vh;
   }
 }
 
+#content {
+  position:absolute;
+  width:100%;
+  top:0;
+}
+
+.btn-secondary {
+  margin-bottom: 16px !important;
+}
+
+.carouselButton {
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
