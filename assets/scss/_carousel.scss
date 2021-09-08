@@ -1,13 +1,5 @@
-@include desktops {
-  .carousel-img {
-    height: 100vh;
-  }
-}
-
 #content {
-  position:absolute;
   width:100%;
-  top:0;
 }
 
 .btn-secondary {
@@ -17,4 +9,20 @@
 .carouselButton {
   color: #FFFFFF;
   text-transform: uppercase;
+}
+
+
+@include tablets {
+  
+  #content {
+    position:absolute;
+    top:0;
+  }
+}
+
+@include desktops {
+
+  .carousel-img {
+    height: 100vh;
+  }
 }
