@@ -37,7 +37,6 @@ async function getProducts() {
               <div class="productDescription">
                 <h3>${description}</h3>
               </div>
-              <a href="${productId}">Buy Now</a>
             </div>
           </div>
         </div>`;
