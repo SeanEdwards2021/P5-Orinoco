@@ -231,7 +231,7 @@ h2 span {
   height: 210px;
 }
 
-.productSize, .productColor {
+.productPrice, .productDescription {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -246,7 +246,7 @@ h2 span {
   transition: 0.5s;
 }
 
-.productSize h3, .productColor h3 {
+.productPrice h3, .productDescription h3 {
   color: #FFFFFF;
   font-weight: 300;
   font-size: 14px;
@@ -254,7 +254,7 @@ h2 span {
   margin-right: 10px;
 }
 
-.productSize span, .productColor span {
+.productPrice span, .productDescription span {
   width: 26px;
   height: 26px;
   text-align: center;
@@ -271,7 +271,7 @@ h2 span {
   cursor: pointer;
 }
 
-.productSize span:hover, .productColor span:hover {
+.productPrice span:hover, .productDescription span:hover {
   background: #FF0000;
 }
 

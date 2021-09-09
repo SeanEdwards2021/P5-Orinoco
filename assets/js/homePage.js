@@ -31,10 +31,10 @@ async function getProducts() {
             </div>
             <div class="productContentBox">
               <h2>${name}</h2>
-              <div class="productSize">
+              <div class="productPrice">
                 <h3>£ ${price}</h3>
               </div>
-              <div class="productColor">
+              <div class="productDescription">
                 <h3>${description}</h3>
               </div>
               <a href="${productId}">Buy Now</a>
