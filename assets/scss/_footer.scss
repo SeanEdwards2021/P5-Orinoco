@@ -20,3 +20,27 @@
 .footer-link {
   color: #000000;
 }
+
+.scrollButton {
+  width: 25px;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
