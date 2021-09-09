@@ -10,8 +10,22 @@
   font-size: 1.5rem;;
 }
 
+.nav-item {
+  list-style-type: none;
+}
+
+#product-number {
+  font-size: 12px;
+  float: right;
+  padding: 5px 0 0 7px;
+}
+
 @include tablets {
   .nav-item {
     color: $white !important;
+  }
+
+  .nav-list {
+    display: flex;
   }
 }

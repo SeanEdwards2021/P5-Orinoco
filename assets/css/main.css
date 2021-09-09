@@ -23,9 +23,24 @@ body {
   font-size: 1.5rem;
 }
 
+.nav-item {
+  list-style-type: none;
+}
+
+#product-number {
+  font-size: 12px;
+  float: right;
+  padding: 5px 0 0 7px;
+}
+
 @media screen and (min-width: 665px) {
   .nav-item {
     color: #FFFFFF !important;
+  }
+  .nav-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
