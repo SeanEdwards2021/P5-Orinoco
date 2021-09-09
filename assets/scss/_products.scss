@@ -69,11 +69,6 @@ h2 span {
     transition: 0.5s;
   }
 
-  &ImgBox:hover {
-    top: 0%;
-    transform: translateY(0%);
-  }
-
   &Img {
     position: absolute;
     top: 50%;
@@ -127,17 +122,6 @@ h2 span {
       transform: translateY(50px);
       transform: 0.5s;
     }
-
-    a:hover {
-      opacity: 1;
-      transform: translateY(0px);
-      transition-delay: 0.75s;
-    }
-
-  }
-
-  &ContentBox:hover {
-    height: 210px;
   }
 
   &Price, &Description {
@@ -154,29 +138,26 @@ h2 span {
       letter-spacing: 2px;
       margin-right: 10px;
     }
-    
-    span {
-      width: 26px;
-      height: 26px;
-      text-align: center;
-      line-height: 26px;
-      font-size: 14px;
-      display: inline-block;
-      color: #111;
-      background: #FFFFFF;
-      margin: 0 5px;
-      transition: 0.5s;
-      color: #111;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    span:hover {
-      background: #FF0000;
-    }
-
   }
 
+  // Card Hover effect
+  &Card:hover {
+
+    .productImgBox {
+      top: 0%;
+      transform: translateY(0%);
+    }
+
+    .productContentBox {
+      height: 190px;
+
+      a {
+        opacity: 1;
+        transform: translateY(0px);
+        transition-delay: 0.75s;
+      }
+    }
+  }
 }
 
 .col-product {
