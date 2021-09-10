@@ -18,7 +18,7 @@ async function getProducts() {
 
     // Create & Append New Product
     let product = document.createElement('div');
-    product.classList.add('col-sm', "col-xl-3", 'col-product');
+    product.classList.add('col-sm', 'col-lg-4', 'col-xl-3', 'col-product');
 
     product.innerHTML = `
         <div  class="product">
