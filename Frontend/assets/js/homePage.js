@@ -1,5 +1,5 @@
 let productsContainer = document.querySelector("#productContainer");
-let url = 'https://orinoco-op.herokuapp.com/api/cameras';
+let url = 'http://localhost:3000/api/cameras';
 
 
 async function getProducts() {
