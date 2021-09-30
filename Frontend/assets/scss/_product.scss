@@ -1,0 +1,105 @@
+.product-container {
+  background-color: #F0F0F0;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.singleProduct {
+
+  &Card {
+    position: relative;
+    width: 345px;
+    height: 450px;
+    background:#232323;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 25px;
+  }
+
+  &Card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #786e62;
+    clip-path: circle(300px at 80% -20%);
+  }
+
+  &Card:after {
+    content: 'Orinoco';
+    position: absolute;
+    top: 60%;
+    left: 2%;
+    font-size: 7em;
+    font-weight: 800;
+    font-style: italic;
+    color: rgba(120,110,98,0.4);
+  }
+
+  &ImgBox {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 10000;
+    width: 100%;
+    height: 220px;
+  }
+
+  &Img {
+    position: absolute;
+    top: 5%;
+    left: 12%;
+    width: 270px;
+    transform: rotate(-15deg);
+  }
+}
+
+@include tablets {
+
+  .product-image-section {
+    display: flex;
+    justify-content: center;
+  }
+
+  .product-details {
+    padding: 0 70px 0 70px;
+  }
+}
+
+@include desktops {
+
+  .product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0px;
+  }
+  
+  .singleProduct {
+
+    &Card {
+      width: 500px;
+      height: 650px;
+      margin-bottom: 0;
+    }
+
+    &Card:before {
+      clip-path: circle(440px at 80% -20%);
+    }
+
+    &Card:after {
+      top: 70%;
+      left: 15%;
+    }
+  
+    &Img {
+      width: 390px;
+    }
+  }
+}
