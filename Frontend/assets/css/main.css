@@ -367,6 +367,7 @@ hr {
 
 .singleProductCard:after {
   content: 'Orinoco';
+  font-family: 'Dancing Script', cursive;
   position: absolute;
   top: 60%;
   left: 2%;
@@ -393,6 +394,10 @@ hr {
   width: 270px;
   -webkit-transform: rotate(-15deg);
           transform: rotate(-15deg);
+}
+
+.singleProductForm {
+  padding-bottom: 20px;
 }
 
 @media screen and (min-width: 665px) {
