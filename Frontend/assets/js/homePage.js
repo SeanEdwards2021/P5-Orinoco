@@ -1,5 +1,5 @@
-let productsContainer = document.querySelector("#productContainer");
-let url = 'http://localhost:3000/api/cameras';
+const productsContainer = document.querySelector("#productContainer");
+const url = 'http://localhost:3000/api/cameras';
 
 
 async function getProducts() {
