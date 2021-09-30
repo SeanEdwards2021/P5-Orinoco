@@ -33,6 +33,7 @@
 
   &Card:after {
     content: 'Orinoco';
+    font-family: 'Dancing Script', cursive;
     position: absolute;
     top: 60%;
     left: 2%;
@@ -57,6 +58,10 @@
     left: 12%;
     width: 270px;
     transform: rotate(-15deg);
+  }
+
+  &Form {
+    padding-bottom: 20px;
   }
 }
 
