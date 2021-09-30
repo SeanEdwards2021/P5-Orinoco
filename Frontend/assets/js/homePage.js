@@ -21,6 +21,7 @@ async function getProducts() {
     product.classList.add('col-sm', 'col-lg-4', 'col-xl-3', 'col-product');
 
     product.innerHTML = `
+      <a href="assets/html/product.html?id=${productId}">
         <div  class="product">
           <div class="productCard">
             <div class="productImgBox">
@@ -39,7 +40,8 @@ async function getProducts() {
               </div>
             </div>
           </div>
-        </div>`;
+        </div>
+      </a>`;
     productsContainer.appendChild(product);
   }
 }
