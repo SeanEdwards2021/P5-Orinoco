@@ -15,7 +15,6 @@ h2 span {
 
 #productContainer {
   display: flex;
-  justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
@@ -25,7 +24,7 @@ h2 span {
 
   &Card {
     position: relative;
-    width: 345px;
+    width: 300px;
     height: 450px;
     background:#232323;
     border-radius: 20px;
@@ -162,8 +161,8 @@ h2 span {
 }
 
 .col-product {
-  padding: 15px !important;
   display: flex;
+  padding: 0 !important;
   justify-content: center;
   align-content: center;
 }

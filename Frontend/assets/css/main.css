@@ -89,9 +89,6 @@ h2 span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -104,7 +101,7 @@ h2 span {
 
 .productCard {
   position: relative;
-  width: 345px;
+  width: 300px;
   height: 450px;
   background: #232323;
   border-radius: 20px;
@@ -255,10 +252,10 @@ h2 span {
 }
 
 .col-product {
-  padding: 15px !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 0 !important;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
