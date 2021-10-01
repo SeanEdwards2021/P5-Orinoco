@@ -60,26 +60,45 @@
     <!-- START OF CONTENT WRAPPER SECTION -->
     <section id="content-product-page">
       <div class="container-fluid product-container">
-        <hr>
-        <div class="row product">
-          <div class="col-sm-12 col-xl-6 product-image-section">
-            <div class="singleProductCard">
-              <div class="singleProductImgBox">
-                <img class="singleProductImg" src="" alt="Product Image">
+        <div class="row singleProduct">
+          <div class="card col-md-11 my-4 p-4 shadow singleProduct">
+            <div id="singleProductContainer">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="singleProductCard">
+                    <div class="singleProductImgBox">
+                      <img class="singleProductImg" src="" alt="Product Image">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 singleProductDescriptionContainer">
+                  <div class="singleProductConatainer">
+                    <h1 class="singleProductTitle" ></h1>
+                    <p class="singleProductDescription"></p>
+                      <form class="dropdownContainer form-group py-2">
+                        <label class="dropdownLabel" for="varnish">Select an Lens:</label>
+                        <select class="form-control singleProductLenses">
+                        </select>
+                      </form>
+                      <h4 class="singleProductPrice"></h4>
+                      <div id="productCounter">
+                        <button class="btn btn-outline-primary" id="productCounterDecrease">-</button>
+                        <span id="productCounterText" class="counter-text"></span>
+                        <button class="btn btn-outline-primary" id="productCounterIncrease">+</button>
+                      </div>
+                      <button class="btn btn-outline-primary" type="button">
+                        Add to Cart
+                        <i class="fas fa-cart-plus" aria-hidden="true"></i>
+                      </button>
+                      <a href="../../index.html" style="text-decoration:none;">
+                        <button type="button" class="btn btn-outline-primary">
+                          Return to Home Page
+                          <i class="fas fa-reply" aria-hidden="true"></i>
+                        </button>
+                      </a>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col-sm-12 col-xl-6 product-details">
-            <div class="singleproductInfo">
-              <h1 class="singleProductTitle" ></h1>
-              <h4 class="singleProductPrice"></h4>
-              <p class="singleProductDescription"></p>
-              <form class="singleProductForm">
-                <label for="camera"><strong>Choose a Lense:</strong></label>
-                <select name="camera" id="singleProductLenses">
-                </select>
-              </form>
-              <button class="btn btn-secondary product-button">Add to basket</button>
             </div>
           </div>
         </div>
