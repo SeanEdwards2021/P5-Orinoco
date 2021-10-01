@@ -2,17 +2,19 @@
 
 const url = 'http://localhost:3000/api/cameras/';
 
-// Variables for DOM
+// letiables for DOM
 let productImage = document.querySelector(".singleProductImg");
 let productTitle = document.querySelector(".singleProductTitle");
 let productPrice = document.querySelector(".singleProductPrice");
 let productDescription = document.querySelector(".singleProductDescription");
-let productLenses = document.querySelector("#singleProductLenses");
+let productLenses = document.querySelector(".singleProductLenses");
 
 
 function init() {
   let productId = getProductId();
   fetchSingleProduct(productId);
+  bindEvents()
+  drawCounter()  
 }
 
 function getProductId() {
@@ -47,12 +49,41 @@ function showProduct(data) {
   productImage.src = imageUrl
 
   for (let i in lenses) {
-    const newOption = document.createElement("option");
-    newOption.textContent = lenses[i];
-    productLenses.appendChild(newOption);
+    const newOLens = document.createElement("option");
+    newOLens.textContent = lenses[i];
+    productLenses.appendChild(newOLens);
   }
+  
   console.log(lenses)
 }
 
+// Quantity Counter
+
+let drawCounter = function () {
+  document.getElementById('productCounterText').innerHTML = store.counter
+}
+
+let bindEvents = function () {
+  document.getElementById('productCounterIncrease').addEventListener('click', function () {
+    increase()
+    drawCounter()
+  })
+  document.getElementById('productCounterDecrease').addEventListener('click', function () {
+    decrease()
+    drawCounter()
+  }) 
+}
+
+let store = {
+  counter: 1  
+}
+
+let increase = function () {
+  store.counter++
+}
+
+let decrease = function () {
+  store.counter--
+}
 
 init()
