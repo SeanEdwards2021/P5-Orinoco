@@ -334,10 +334,18 @@ hr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-pack: start !important;
+      -ms-flex-pack: start !important;
+          justify-content: flex-start !important;
+}
+
+.singleProduct {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -345,8 +353,7 @@ hr {
 
 .singleProductCard {
   position: relative;
-  width: 345px;
-  height: 450px;
+  height: 580px !important;
   background: #232323;
   border-radius: 20px;
   overflow: hidden;
@@ -379,7 +386,7 @@ hr {
 
 .singleProductImgBox {
   position: absolute;
-  top: 40%;
+  top: 35%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   z-index: 10000;
@@ -396,8 +403,62 @@ hr {
           transform: rotate(-15deg);
 }
 
-.singleProductForm {
-  padding-bottom: 20px;
+.singleProductPrice {
+  margin: 20px 0;
+}
+
+.singleProductLenses {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 5%;
+}
+
+.singleProductLenses p {
+  padding: 5px;
+  margin: 0 30px 0 0;
+}
+
+.singleProductDescriptionContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+}
+
+#productCounter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 30px;
+}
+
+#productCounterDecrease {
+  margin-right: 10px;
+}
+
+#productCounterIncrease {
+  margin-left: 10px;
+}
+
+.btn-outline-primary {
+  color: grey;
+  border-color: grey;
+  margin-right: 20px;
+}
+
+.btn-outline-primary:hover {
+  border-color: grey;
+  background-color: #232323;
+  opacity: 0.5;
 }
 
 @media screen and (min-width: 665px) {
@@ -443,6 +504,9 @@ hr {
   }
   .singleProductImg {
     width: 390px;
+  }
+  .singleProductTitle {
+    margin-bottom: 60px;
   }
 }
 /*# sourceMappingURL=main.css.map */
