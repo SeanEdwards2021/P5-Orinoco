@@ -83,7 +83,9 @@ let increase = function () {
 }
 
 let decrease = function () {
-  store.counter--
+  if(store.counter !== 1) {
+    store.counter--
+  }
 }
 
 init()
