@@ -92,7 +92,6 @@ h2 span {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 100vh;
 }
 
 .product {
@@ -255,12 +254,13 @@ h2 span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0 !important;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
+  margin: 20px 0;
+  padding: 0 !important;
 }
 
 hr {

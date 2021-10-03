@@ -16,7 +16,6 @@ h2 span {
 #productContainer {
   display: flex;
   align-items: center;
-  min-height: 100vh;
 }
 
 .product {
@@ -162,9 +161,10 @@ h2 span {
 
 .col-product {
   display: flex;
-  padding: 0 !important;
   justify-content: center;
   align-content: center;
+  margin: 20px 0;
+  padding: 0 !important;
 }
 
 hr {
