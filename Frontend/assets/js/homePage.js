@@ -1,11 +1,16 @@
+// ---------- HTML CONTAINER FOR PRODUCT SECTION ON HOME PAGE ----------
 const productsContainer = document.querySelector("#productContainer");
+
+// ---------- API URL ----------
 const url = 'http://localhost:3000/api/cameras';
 
 
+// ---------- GET PRODUCTS FROM API AND CREATE PRODUCT SECTION ON HTML DOCUMENT
 async function getProducts() {
   const response = await fetch(url);
   const data = await response.json();
 
+  // Loops through each object of API and exctract the product data
   for (let i = 0; i < data.length; i++) {
 
     // Product Value Variables
@@ -46,8 +51,10 @@ async function getProducts() {
   }
 }
 
-//Get the button
-let myButton = document.getElementById("myBtn");
+// SCROLL TO TOP OF PAGE FEATURE
+
+//Scroll to top button
+let myButton = document.querySelector("#scrollButton");
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};

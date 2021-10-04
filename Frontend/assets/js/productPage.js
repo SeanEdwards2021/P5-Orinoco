@@ -3,7 +3,7 @@
 // ---------- API URL ----------
 const url = 'http://localhost:3000/api/cameras/';
 
-// ---------- Variables for DOM ----------
+// ---------- VARIABLES FOR DOM ----------
 let productImage = document.querySelector(".singleProductImg");
 let productTitle = document.querySelector(".singleProductTitle");
 let productPrice = document.querySelector(".singleProductPrice");
@@ -13,7 +13,7 @@ let productQuantity = document.querySelector("#productCounterText");
 const btnAddToCart = document.querySelector(".addToCart");
 let product = {};
 
-// ---------- Funtions to run when page is loading ----------
+// ---------- FUNCTIONS TO RUN WHEN PAGE IS LOADING ----------
 function init() {
   let productId = getProductId();
   fetchSingleProduct(productId);
@@ -77,11 +77,11 @@ let productQuantityCounterValue = {
 
 // Event Listeners for + - buttons 
 let bindEvents = function () {
-  document.getElementById('productCounterIncrease').addEventListener('click', function () {
+  document.querySelector('#productCounterIncrease').addEventListener('click', function () {
     increase()
   })
   
-  document.getElementById('productCounterDecrease').addEventListener('click', function () {
+  document.querySelector('#productCounterDecrease').addEventListener('click', function () {
     decrease()
   }) 
 }
@@ -89,7 +89,7 @@ let bindEvents = function () {
 // Increase/Decrease functions
 let increase = function () {
   productQuantityCounterValue.counter++
-  document.getElementById('productCounterText').innerHTML = productQuantityCounterValue.counter
+  document.querySelector('#productCounterText').innerHTML = productQuantityCounterValue.counter
 }
 
 let decrease = function () {
@@ -97,11 +97,11 @@ let decrease = function () {
   // Stop decreasing to anything <1
   if(productQuantityCounterValue.counter !== 1) {
     productQuantityCounterValue.counter--
-    document.getElementById('productCounterText').innerHTML = productQuantityCounterValue.counter
+    document.querySelector('#productCounterText').innerHTML = productQuantityCounterValue.counter
   }
 }
 
-// ---------- Adding item to cart in Local Storage ----------
+// ---------- ADDING ITEM TO CART IN LOCAL STORAGE ----------
 
 // Event listener on addToCart button
 btnAddToCart.addEventListener('click', () => {
