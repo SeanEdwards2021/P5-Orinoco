@@ -1,18 +1,19 @@
 'use strict';
 
-// API URL  
+// ---------- API URL ----------
 const url = 'http://localhost:3000/api/cameras/';
 
-// letiables for DOM
+// ---------- Variables for DOM ----------
 let productImage = document.querySelector(".singleProductImg");
 let productTitle = document.querySelector(".singleProductTitle");
 let productPrice = document.querySelector(".singleProductPrice");
 let productDescription = document.querySelector(".singleProductDescription");
 let productLenses = document.querySelector(".singleProductLenses");
+let productQuantity = document.querySelector("#productCounterText");
 const btnAddToCart = document.querySelector(".addToCart");
 let product = {};
 
-// Funtions to run when page is loading
+// ---------- Funtions to run when page is loading ----------
 function init() {
   let productId = getProductId();
   fetchSingleProduct(productId);
@@ -62,7 +63,8 @@ function showProduct(data) {
     newOLens.textContent = lenses[i];
     productLenses.appendChild(newOLens);
   }
-  // Call fimction to get current cart num when page has loaded
+
+  // Call function to get current cart num when page has loaded
   addNumCart()
 }
 
@@ -78,7 +80,7 @@ let bindEvents = function () {
   document.getElementById('productCounterIncrease').addEventListener('click', function () {
     increase()
   })
-
+  
   document.getElementById('productCounterDecrease').addEventListener('click', function () {
     decrease()
   }) 
@@ -91,11 +93,41 @@ let increase = function () {
 }
 
 let decrease = function () {
+
+  // Stop decreasing to anything <1
   if(productQuantityCounterValue.counter !== 1) {
     productQuantityCounterValue.counter--
     document.getElementById('productCounterText').innerHTML = productQuantityCounterValue.counter
   }
 }
+
+// ---------- Adding item to cart in Local Storage ----------
+
+// Event listener on addToCart button
+btnAddToCart.addEventListener('click', () => {
+  let cartItems = []
+  const localStorageContent = localStorage.getItem('cart');
+
+  // Check to see if there is already items in the cart
+  if (localStorageContent === null) {
+    cartItems = [];
+  } else {
+    cartItems = JSON.parse(localStorageContent);
+  }
+
+  // Creating product object to push to cart
+  let singleProduct = {
+    selectLenses: productLenses.value,
+    quantity: productQuantity.innerHTML
+  };
+
+  // Push singleProduct to cart list
+  cartItems.push(singleProduct);
+  localStorage.setItem('cart', JSON.stringify(cartItems));
+
+  // Update cart number on Navbar cart
+  addNumCart()
+});
 
 // Get current cart item number for Navbar cart
 function addNumCart() {
