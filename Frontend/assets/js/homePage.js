@@ -72,3 +72,20 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+// Get current cart item number for Navbar cart
+function addNumCart() {
+  const localStorageContent = localStorage.getItem('cart');
+  let cartItemsArray = JSON.parse(localStorageContent);
+  let totalQuantityOfProducts = 0
+
+  for(let i=0; i < cartItemsArray.length; i++) {
+    let productQuantity = cartItemsArray[i].quantity
+    totalQuantityOfProducts += productQuantity
+  }
+
+  let cartNum = document.querySelector("#product-number");
+  cartNum.innerHTML = totalQuantityOfProducts;
+}
+
+addNumCart()
