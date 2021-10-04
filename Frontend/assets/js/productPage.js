@@ -35,6 +35,7 @@ function fetchSingleProduct(id) {
   fetch(url + id)
     .then(response => response.json())
     .then(data => {
+      product = data;
       showProduct(data);
     })
     .catch(err => console.log(err))
@@ -117,8 +118,12 @@ btnAddToCart.addEventListener('click', () => {
 
   // Creating product object to push to cart
   let singleProduct = {
+    prodId: product._id,
+    imageUrl: product.imageUrl,
+    name: product.name,
     selectLenses: productLenses.value,
-    quantity: productQuantity.innerHTML
+    price: product.price,
+    quantity: parseInt(productQuantity.innerHTML)
   };
 
   // Push singleProduct to cart list
@@ -133,6 +138,7 @@ btnAddToCart.addEventListener('click', () => {
 function addNumCart() {
   const localStorageContent = localStorage.getItem('cart');
   let cartItemsArray = JSON.parse(localStorageContent);
+  console.log(cartItemsArray)
   let cartNum = document.querySelector("#product-number");
   cartNum.innerHTML = cartItemsArray.length;
 }
