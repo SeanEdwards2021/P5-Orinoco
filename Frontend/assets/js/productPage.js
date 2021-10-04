@@ -16,8 +16,7 @@ let product = {};
 function init() {
   let productId = getProductId();
   fetchSingleProduct(productId);
-  bindEvents()
-  drawCounter()  
+  bindEvents()  
 }
 
 // ---------- DYNAMICALLY GET PRODUCT INFORMATION FOR PRODUCT PAGE ----------
