@@ -303,7 +303,7 @@ hr {
   width: 25px;
 }
 
-#myBtn {
+#scrollButton {
   display: none;
   position: fixed;
   bottom: 20px;
@@ -318,7 +318,7 @@ hr {
   border-radius: 4px;
 }
 
-#myBtn:hover {
+#scrollButton:hover {
   -webkit-transform: translateY(-10px);
   transform: translateY(-10px);
 }
