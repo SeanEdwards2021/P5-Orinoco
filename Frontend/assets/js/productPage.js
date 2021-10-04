@@ -138,9 +138,21 @@ btnAddToCart.addEventListener('click', () => {
 function addNumCart() {
   const localStorageContent = localStorage.getItem('cart');
   let cartItemsArray = JSON.parse(localStorageContent);
-  console.log(cartItemsArray)
+  let totalQuantityOfProducts = 0
+
+  if (cartItemsArray.length > 0) {
+    for(let i=0; i < cartItemsArray.length; i++) {
+      let productQuantity = cartItemsArray[i].quantity
+      totalQuantityOfProducts += productQuantity
+    }
+  } else {
+    let currentOrder = cartItemsArray.length - 1
+    let productQuantity = cartItemsArray[currentOrder].quantity
+    totalQuantityOfProducts += productQuantity
+  }
+
   let cartNum = document.querySelector("#product-number");
-  cartNum.innerHTML = cartItemsArray.length;
+  cartNum.innerHTML = totalQuantityOfProducts;
 }
 
 // ---------- CALLING PAGE FUNCTIONS ----------
