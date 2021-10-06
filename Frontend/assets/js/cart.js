@@ -147,7 +147,7 @@ function orderSubtotal() {
 
     totalCartAmount += totalProductPrice
   }
-  product_total.innerHTML = totalCartAmount
+  product_total.innerHTML = totalCartAmount.toFixed(2)
   orderDiscount(totalCartAmount)
 }
 
@@ -174,7 +174,7 @@ function orderDiscount(totalCartAmount) {
   // Check if discount code is in discountCodes object
   } else if (discountCodeUsed in discountCodes) {
     let discountPercent = discountCodes[discountCodeUsed]
-    discountedValue = discountPercent * totalCartAmount
+    discountedValue = (discountPercent * totalCartAmount).toFixed(2)
 
     // Confirm message of discount code being applied to the price of products
     confirm.innerHTML = 'Discount Code Applied';
@@ -201,7 +201,7 @@ function orderDiscount(totalCartAmount) {
 // Gets the total of the order with discount applied
 function orderTotal(totalCartAmount, discountedValue) {
   let orderTotal = document.querySelector('#total_cart_amt')
-  orderTotal.innerHTML = totalCartAmount - discountedValue
+  orderTotal.innerHTML = (totalCartAmount - discountedValue).toFixed(2)
 }
 
 // ---------- SCROLL TO TOP OF PAGE FEATURE ----------
