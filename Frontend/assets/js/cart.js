@@ -1,14 +1,19 @@
+// ---------- GLOBAL VARIABLES ----------
 const localStorageContent = localStorage.getItem('cart');
 const cartItems = JSON.parse(localStorageContent);
 const cartContainer = document.querySelector('#cartContainer')
 
+// ---------- FUNCTION TO RUN WHEN PAGE LOADS ----------
 window.onload = function() {init()};
 
+// Check status of local storage on page load
 function init() {
-  console.log("Working")
 
+  // Checks for any array in local storage
   if (!localStorageContent) {
     emptyCart()
+
+  // Checks length of cart array
   } else if( cartItems.length === 0){
     emptyCart()
   } else { 
@@ -18,6 +23,9 @@ function init() {
   }
 }
 
+// ---------- FUNCTIONS CREATING HTML PAGE ELEMENTS ----------
+
+// Creates empty cart page
 function emptyCart() {
   let section = document.querySelector('.cartSection')
   section.innerHTML = `
@@ -42,11 +50,7 @@ function emptyCart() {
     </div>`;
 }
 
-function removeAllItems() {
-  localStorage.clear();
-  emptyCart()
-}
-
+// Creates cart page with the items from local storage
 function cartProductList() {
   cartContainer.innerHTML = ''
 
@@ -94,19 +98,29 @@ function cartProductList() {
   }
 }
 
+// ---------- FUNCTIONS FOR PRODUCT ITEMS SECTION ----------
+
+// Removes all items currently saved on local storage and updates cart page
+function removeAllItems() {
+  localStorage.clear();
+  emptyCart()
+}
+
+// Removes single item saved on local storage and updates cart page
 function removeSingleProduct(productID) {
-  console.log(cartItems)
   cartItems.splice(productID, 1);
-  console.log(cartItems)
   localStorage.setItem('cart', JSON.stringify(cartItems));
   init()
 }
 
+// Adjusts item quantities in local storage and updates cart page
 function changeProductQuantity() {
   console.log("Hello")
 }
 
+// ---------- FUNCTIONS FOR ORDER SUBTOTAL SECTION ----------
 
+// Gets the total price of all products saved in local storage
 function orderSubtotal() {
 
   let product_total = document.querySelector('#product_total_amt')
@@ -128,19 +142,20 @@ function orderSubtotal() {
   orderDiscount(totalCartAmount)
 }
 
+// Gets the total price of all discounts applied through the discount codes used
 function orderDiscount(totalCartAmount) {
   let orderDiscount = document.querySelector('#discount_applied')
   orderDiscount = orderDiscount.innerHTML = 0
   orderTotal(totalCartAmount, orderDiscount)
 }
 
+// Gets the total of the order with discount applied
 function orderTotal(totalCartAmount, orderDiscount) {
   let orderTotal = document.querySelector('#total_cart_amt')
-
   orderTotal.innerHTML = totalCartAmount - orderDiscount
 }
 
-// SCROLL TO TOP OF PAGE FEATURE
+// ---------- SCROLL TO TOP OF PAGE FEATURE ----------
 
 //Scroll to top button
 let myButton = document.querySelector("#scrollButton");
@@ -162,17 +177,19 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
-// Get current cart item number for Navbar cart
+// ---------- GET THE CURRENT CART ITEM NUMBER FOR THE NAVBAR CART ----------
 function addNumCart() {
   const localStorageContent = localStorage.getItem('cart');
   let cartItemsArray = JSON.parse(localStorageContent);
   let totalQuantityOfProducts = 0
 
+  // Loop through cart array and adds up all the quantities 
   for(let i=0; i < cartItemsArray.length; i++) {
     let productQuantity = cartItemsArray[i].quantity
     totalQuantityOfProducts += productQuantity
   }
 
+  // Applies current quantity to HTML file
   let cartNum = document.querySelector("#product-number");
   cartNum.innerHTML = totalQuantityOfProducts;
 }
