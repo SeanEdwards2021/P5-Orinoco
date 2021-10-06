@@ -126,6 +126,9 @@ function quantityChange(productID, increaseDecrease) {
       cartItems[productID].quantity = cartItems[productID].quantity + 1;
     } else {
       cartItems[productID].quantity = cartItems[productID].quantity - 1;
+      if (cartItems[productID].quantity === 0){
+        cartItems.splice(productID, 1);
+      }
     }
     window.localStorage.setItem('cart', JSON.stringify(cartItems));
   }
