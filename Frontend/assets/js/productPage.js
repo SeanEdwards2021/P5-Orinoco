@@ -145,28 +145,7 @@ btnAddToCart.addEventListener('click', () => {
   addNumCart()
 });
 
-// Get current cart item number for Navbar cart
-function addNumCart() {
-  const localStorageContent = localStorage.getItem('cart');
-  let cartItemsArray = JSON.parse(localStorageContent);
-  let totalQuantityOfProducts = 0
-
-  if (cartItemsArray.length > 0) {
-    for(let i=0; i < cartItemsArray.length; i++) {
-      let productQuantity = cartItemsArray[i].quantity
-      totalQuantityOfProducts += productQuantity
-    }
-  } else {
-    let currentOrder = cartItemsArray.length - 1
-    let productQuantity = cartItemsArray[currentOrder].quantity
-    totalQuantityOfProducts += productQuantity
-  }
-
-  let cartNum = document.querySelector("#product-number");
-  cartNum.innerHTML = totalQuantityOfProducts;
-}
-
-// SCROLL TO TOP OF PAGE FEATURE
+// ---------- SCROLL TO TOP OF PAGE FEATURE ----------
 
 //Scroll to top button
 let myButton = document.querySelector("#scrollButton");
@@ -186,4 +165,26 @@ function scrollFunction() {
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
+}
+
+// ---------- GET THE CURRENT CART ITEM NUMBER FOR THE NAVBAR CART ----------
+
+function addNumCart() {
+  const localStorageContent = localStorage.getItem('cart');
+  let cartItemsArray = JSON.parse(localStorageContent);
+  let totalQuantityOfProducts = 0
+
+  if (cartItemsArray.length > 0) {
+    for(let i=0; i < cartItemsArray.length; i++) {
+      let productQuantity = cartItemsArray[i].quantity
+      totalQuantityOfProducts += productQuantity
+    }
+  } else {
+    let currentOrder = cartItemsArray.length - 1
+    let productQuantity = cartItemsArray[currentOrder].quantity
+    totalQuantityOfProducts += productQuantity
+  }
+
+  let cartNum = document.querySelector("#product-number");
+  cartNum.innerHTML = totalQuantityOfProducts;
 }

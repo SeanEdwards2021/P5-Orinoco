@@ -51,7 +51,7 @@ async function getProducts() {
   }
 }
 
-// SCROLL TO TOP OF PAGE FEATURE
+// ---------- SCROLL TO TOP OF PAGE FEATURE ----------
 
 //Scroll to top button
 let myButton = document.querySelector("#scrollButton");
@@ -73,7 +73,8 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
-// Get current cart item number for Navbar cart
+// ---------- GET THE CURRENT CART ITEM NUMBER FOR THE NAVBAR CART ----------
+
 function addNumCart() {
   const localStorageContent = localStorage.getItem('cart');
   let cartItemsArray = JSON.parse(localStorageContent);
