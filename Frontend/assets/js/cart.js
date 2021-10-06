@@ -83,9 +83,9 @@ function cartProductList() {
       </div>
       <div class="row productContainerMoreDetails">
         <div class="productContainerItemQuantity col-4">
-          <button class="productItemPlus btn btn-outline-primary" id="productCounterDecrease">-</button>
-          <span id="productCounterText" class="productItemQuantity">${productQuantity}</span>
-          <button class="productItemMinus btn btn-outline-primary" id="productCounterIncrease">+</button>
+          <button class="productItemPlus btn btn-outline-primary" id="productCounterDecrease" onClick="decrease(${i})">-</button>
+          <span id="${i}" class="productItemQuantity productCounterText">${productQuantity}</span>
+          <button class="productItemMinus btn btn-outline-primary" id="productCounterIncrease" onClick="increase(${i})">+</button>
         </div>
         <div class="col-4 productContainerItemPrice">
           <h3 class="productItemPrice">£<span>${totalProductPrice}</span></h3>
@@ -118,6 +118,16 @@ function changeProductQuantity() {
   console.log("Hello")
 }
 
+// Increase  quantity function
+function increase(productID) {
+  console.log(productID)
+}
+
+//Decrease quantity function
+function decrease(productID) {
+  console.log(productID)
+}
+
 // ---------- FUNCTIONS FOR ORDER SUBTOTAL SECTION ----------
 
 // Gets the total price of all products saved in local storage
@@ -136,7 +146,6 @@ function orderSubtotal() {
     let totalProductPrice = (productPrice * productQuantity);
 
     totalCartAmount += totalProductPrice
-    console.log(totalCartAmount)
   }
   product_total.innerHTML = totalCartAmount
   orderDiscount(totalCartAmount)
@@ -144,15 +153,55 @@ function orderSubtotal() {
 
 // Gets the total price of all discounts applied through the discount codes used
 function orderDiscount(totalCartAmount) {
+
+  //Object with all available discount codes.
+  let discountCodes = {
+    GET25PERCENT: 0.25,
+    GET40PERCENT: 0.40,
+  }
+
+  let discountedValue = 0
+
+  //Variables used
+  let discountCodeUsed =  document.querySelector('#discount_code1').value
   let orderDiscount = document.querySelector('#discount_applied')
-  orderDiscount = orderDiscount.innerHTML = 0
-  orderTotal(totalCartAmount, orderDiscount)
+  let confirm = document.querySelector('#confirmFeedback');
+
+  // Check if any discount code has been entered
+  if (discountCodeUsed === ""){
+    orderTotal(totalCartAmount, discountedValue)
+
+  // Check if discount code is in discountCodes object
+  } else if (discountCodeUsed in discountCodes) {
+    let discountPercent = discountCodes[discountCodeUsed]
+    discountedValue = discountPercent * totalCartAmount
+
+    // Confirm message of discount code being applied to the price of products
+    confirm.innerHTML = 'Discount Code Applied';
+    confirm.classList.add('confirmFeedback','confirmFeedbackVisible');
+    confirm.hideTimeout = setTimeout(() => {
+      confirm.classList.remove('confirmFeedback','confirmFeedbackVisible');
+    }, 3000);
+
+  } else {
+
+    // Confirm message of invalid discount code
+    confirm.innerHTML = 'Invalid Discount Code';
+    confirm.classList.add('confirmFeedbackInvalid','confirmFeedbackVisible');
+    confirm.hideTimeout = setTimeout(() => {
+      confirm.classList.remove('confirmFeedbackInvalid','confirmFeedbackVisible');
+    }, 3000);
+  }
+
+  // Changes discount code value and calls orderTotal function
+  orderDiscount.innerHTML = discountedValue
+  orderTotal(totalCartAmount, discountedValue)
 }
 
 // Gets the total of the order with discount applied
-function orderTotal(totalCartAmount, orderDiscount) {
+function orderTotal(totalCartAmount, discountedValue) {
   let orderTotal = document.querySelector('#total_cart_amt')
-  orderTotal.innerHTML = totalCartAmount - orderDiscount
+  orderTotal.innerHTML = totalCartAmount - discountedValue
 }
 
 // ---------- SCROLL TO TOP OF PAGE FEATURE ----------
@@ -178,6 +227,7 @@ function topFunction() {
 }
 
 // ---------- GET THE CURRENT CART ITEM NUMBER FOR THE NAVBAR CART ----------
+
 function addNumCart() {
   const localStorageContent = localStorage.getItem('cart');
   let cartItemsArray = JSON.parse(localStorageContent);
@@ -193,5 +243,3 @@ function addNumCart() {
   let cartNum = document.querySelector("#product-number");
   cartNum.innerHTML = totalQuantityOfProducts;
 }
-
-
