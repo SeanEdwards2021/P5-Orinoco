@@ -70,6 +70,40 @@ body {
   }
 }
 
+.confirmFeedback {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #00c02b !important;
+  border-color: #009d23 !important;
+  color: #ffffff;
+  margin-top: 10px;
+  max-width: 400px;
+  padding: 6px;
+  background: #cccccc;
+  text-align: center;
+  border: 1px solid #aaaaaa;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s, top 0.2s, visibility 0.2s;
+  transition: opacity 0.2s, top 0.2s, visibility 0.2s;
+}
+
+.confirmFeedbacka {
+  text-decoration: none;
+}
+
+.confirmFeedbackVisible {
+  top: 20px;
+  opacity: 1;
+  visibility: visible;
+}
+
 .product-container {
   background-color: #F0F0F0;
 }
