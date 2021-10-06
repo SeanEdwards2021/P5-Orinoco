@@ -267,6 +267,318 @@ hr {
   border: 1px solid #786e62;
 }
 
+.pb-5 {
+  padding: 1.5rem 0 0.5rem 0 !important;
+  margin: 0 !important;
+}
+
+h2 {
+  font-size: 35px;
+  font-weight: 600;
+}
+
+h2 span {
+  color: #786e62;
+  font-size: 3rem;
+}
+
+#productContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.product {
+  position: relative;
+}
+
+.productCard {
+  position: relative;
+  width: 300px;
+  height: 450px;
+  background: #232323;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.productCard:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #786e62;
+  -webkit-clip-path: circle(150px at 80% 20%);
+          clip-path: circle(150px at 80% 20%);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.productCard:hover:before {
+  -webkit-clip-path: circle(300px at 80% -20%);
+          clip-path: circle(300px at 80% -20%);
+}
+
+.productCard:after {
+  content: 'Orinoco';
+  font-family: 'Dancing Script', cursive;
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  font-size: 6em;
+  font-weight: 800;
+  font-style: italic;
+  color: rgba(120, 110, 98, 0.4);
+}
+
+.productImgBox {
+  position: absolute;
+  top: 40%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 10000;
+  width: 100%;
+  height: 220px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.productImg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(-25deg);
+          transform: translate(-50%, -50%) rotate(-25deg);
+  width: 270px;
+}
+
+.productImgButton {
+  position: absolute;
+  top: 70%;
+  left: 65%;
+  width: 50px;
+  height: 50px;
+  background: #fbfbfb;
+  border: 1px solid #eee;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.productImgAdd {
+  max-width: 100%;
+}
+
+.productContentBox {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  -webkit-transition: 1s;
+  transition: 1s;
+  z-index: 10;
+}
+
+.productContentBox h2 {
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+}
+
+.productContentBox a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #FFFFFF;
+  border-radius: 4px;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #111;
+  opacity: 0;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  -webkit-transform: 0.5s;
+          transform: 0.5s;
+}
+
+.productPrice, .productDescription {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px 20px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.productPrice h3, .productDescription h3 {
+  color: #FFFFFF;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-right: 10px;
+}
+
+.productCard:hover .productImgBox {
+  top: 0%;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
+.productCard:hover .productContentBox {
+  height: 190px;
+}
+
+.productCard:hover .productContentBox a {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-transition-delay: 0.75s;
+          transition-delay: 0.75s;
+}
+
+.col-product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 20px 0;
+  padding: 0 !important;
+}
+
+hr {
+  border: 1px solid #786e62;
+}
+
+.basketInformation {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.basketInformationHeading {
+  padding: 15px 0 15px 15px;
+  border-bottom: solid 1px lightgrey;
+}
+
+.productContainer {
+  padding: 10px;
+  margin: 15px;
+}
+
+.productContainerImage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-height: 150px;
+  max-width: 200px;
+}
+
+.productContainerMoreDetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.productHeading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.productHeadingHeaderText {
+  margin: 15px 0 0 0 !important;
+}
+
+.productHeadingEmptyCart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-right: 5px;
+}
+
+.productImage {
+  max-height: 150px;
+  width: 220px;
+}
+
+.productTitle {
+  margin: 0 !important;
+}
+
+.productLens {
+  margin: 15px 0 !important;
+}
+
+.productRemoveItemButton {
+  margin: 0 !important;
+}
+
+.productItemPlus {
+  margin-right: 10px;
+}
+
+.productItemMinus {
+  margin-left: 10px;
+}
+
+.productItemPrice {
+  margin: 0;
+}
+
+.orderSummary {
+  margin-bottom: 15px !important;
+}
+
+.orderSummaryProductAmount, .orderSummaryShippingCost, .orderSummaryDiscountApplied, .orderSummaryTotalAmount {
+  border-top: solid 1px lightgrey !important;
+}
+
+.orderSummaryProductAmount p, .orderSummaryShippingCost p, .orderSummaryDiscountApplied p, .orderSummaryTotalAmount p {
+  margin: 5px 0;
+}
+
+.orderSummarycheckoutButton {
+  margin-top: 10px;
+}
+
 #footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -321,177 +633,5 @@ hr {
 #scrollButton:hover {
   -webkit-transform: translateY(-10px);
   transform: translateY(-10px);
-}
-
-.product-container {
-  background-color: #F0F0F0;
-}
-
-.product-details {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start !important;
-      -ms-flex-pack: start !important;
-          justify-content: flex-start !important;
-}
-
-.singleProduct {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.singleProductCard {
-  position: relative;
-  height: 580px !important;
-  background: #232323;
-  border-radius: 20px;
-  overflow: hidden;
-  margin-bottom: 25px;
-}
-
-.singleProductCard:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #786e62;
-  -webkit-clip-path: circle(300px at 80% -20%);
-          clip-path: circle(300px at 80% -20%);
-}
-
-.singleProductCard:after {
-  content: 'Orinoco';
-  font-family: 'Dancing Script', cursive;
-  position: absolute;
-  top: 60%;
-  left: 2%;
-  font-size: 7em;
-  font-weight: 800;
-  font-style: italic;
-  color: rgba(120, 110, 98, 0.4);
-}
-
-.singleProductImgBox {
-  position: absolute;
-  top: 35%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  z-index: 10000;
-  width: 100%;
-  height: 220px;
-}
-
-.singleProductImg {
-  position: absolute;
-  top: 5%;
-  left: 12%;
-  width: 270px;
-  -webkit-transform: rotate(-15deg);
-          transform: rotate(-15deg);
-}
-
-.singleProductPrice {
-  margin: 20px 0;
-}
-
-.singleProductDescriptionContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center !important;
-      -ms-flex-align: center !important;
-          align-items: center !important;
-  -webkit-box-pack: center !important;
-      -ms-flex-pack: center !important;
-          justify-content: center !important;
-}
-
-#productCounter {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-bottom: 30px;
-}
-
-#productCounterDecrease {
-  margin-right: 10px;
-}
-
-#productCounterIncrease {
-  margin-left: 10px;
-}
-
-.btn-outline-primary {
-  color: grey;
-  border-color: grey;
-  margin-right: 20px;
-}
-
-.btn-outline-primary:hover {
-  border-color: grey;
-  background-color: #232323;
-  opacity: 0.5;
-}
-
-@media screen and (min-width: 665px) {
-  .product-image-section {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .product-details {
-    padding: 0 70px 0 70px;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .product-details {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    margin-top: 0px;
-  }
-  .singleProductCard {
-    width: 500px;
-    height: 650px;
-    margin-bottom: 0;
-  }
-  .singleProductCard:before {
-    -webkit-clip-path: circle(440px at 80% -20%);
-            clip-path: circle(440px at 80% -20%);
-  }
-  .singleProductCard:after {
-    top: 70%;
-    left: 15%;
-  }
-  .singleProductImg {
-    width: 390px;
-  }
-  .singleProductTitle {
-    margin-bottom: 60px;
-  }
 }
 /*# sourceMappingURL=main.css.map */
