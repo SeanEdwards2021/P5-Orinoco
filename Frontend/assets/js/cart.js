@@ -83,9 +83,9 @@ function cartProductList() {
       </div>
       <div class="row productContainerMoreDetails">
         <div class="productContainerItemQuantity col-4">
-          <button class="productItemPlus btn btn-outline-primary" id="productCounterDecrease" onClick="decrease(${i})">-</button>
+          <button class="productItemPlus btn btn-outline-primary" id="productCounterDecrease" onClick="quantityChange(${i}, 0)">-</button>
           <span id="${i}" class="productItemQuantity productCounterText">${productQuantity}</span>
-          <button class="productItemMinus btn btn-outline-primary" id="productCounterIncrease" onClick="increase(${i})">+</button>
+          <button class="productItemMinus btn btn-outline-primary" id="productCounterIncrease" onClick="quantityChange(${i}, 1)">+</button>
         </div>
         <div class="col-4 productContainerItemPrice">
           <h3 class="productItemPrice">£<span>${totalProductPrice}</span></h3>
@@ -114,18 +114,22 @@ function removeSingleProduct(productID) {
 }
 
 // Adjusts item quantities in local storage and updates cart page
-function changeProductQuantity() {
-  console.log("Hello")
-}
 
 // Increase  quantity function
-function increase(productID) {
-  console.log(productID)
-}
+function quantityChange(productID, increaseDecrease) {
 
-//Decrease quantity function
-function decrease(productID) {
-  console.log(productID)
+  // Check local storage
+  if (localStorageContent != null) {
+
+    // Check to see what button has been pressed
+    if (increaseDecrease === 1) {
+      cartItems[productID].quantity = cartItems[productID].quantity + 1;
+    } else {
+      cartItems[productID].quantity = cartItems[productID].quantity - 1;
+    }
+    window.localStorage.setItem('cart', JSON.stringify(cartItems));
+  }
+  init()
 }
 
 // ---------- FUNCTIONS FOR ORDER SUBTOTAL SECTION ----------
