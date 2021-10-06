@@ -132,6 +132,15 @@ btnAddToCart.addEventListener('click', () => {
   cartItems.push(singleProduct);
   localStorage.setItem('cart', JSON.stringify(cartItems));
 
+  // Add confirmation message
+  let confirm = document.querySelector('.confirmFeedback');
+  confirm.innerHTML = 'Item Added to cart.';
+  confirm.classList.add('confirmFeedbackVisible');
+  console.log("Done")
+  confirm.hideTimeout = setTimeout(() => {
+    confirm.classList.remove('confirmFeedbackVisible');
+  }, 3000);
+
   // Update cart number on Navbar cart
   addNumCart()
 });
