@@ -211,6 +211,75 @@ function orderTotal(totalCartAmount, discountedValue) {
   orderTotal.innerHTML = (totalCartAmount - discountedValue).toFixed(2)
 }
 
+// ---------- CREATE CUSTOMER ON LOCAL STORAGE ----------
+
+function saveCustomerDetails() {
+
+  console.log("Customer")
+
+  let customers = []
+  const localStorageContent = localStorage.getItem('customer');
+
+  // Check to see if there is already items in the cart
+  if (localStorageContent === null) {
+    customers = [];
+  } else {
+    customers = JSON.parse(localStorageContent);
+  }
+
+  // Creating product object to push to cart
+  let customerDetails = {
+    firstName: document.querySelector('#firstName').value,
+    lastName: document.querySelector('#lastName').value,
+    emailAddress: document.querySelector('#email').value,
+    address: document.querySelector('#address').value,
+    country: document.querySelector('#country').value,
+    county: document.querySelector('#state').value,
+    postCode: document.querySelector('#zip').value,
+  };
+
+  // Push singleProduct to cart list
+  customers.push(customerDetails);
+  localStorage.setItem('customer', JSON.stringify(customers));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ---------- SCROLL TO TOP OF PAGE FEATURE ----------
 
 //Scroll to top button
