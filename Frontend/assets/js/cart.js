@@ -220,6 +220,10 @@ function saveCustomerDetails() {
   let customers = []
   const localStorageContent = localStorage.getItem('customer');
 
+  // Get current date for orderPlaced key in customerDetails object
+  let today = new Date();
+  let date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+
   // Check to see if there is already items in the cart
   if (localStorageContent === null) {
     customers = [];
@@ -237,6 +241,7 @@ function saveCustomerDetails() {
     county: document.querySelector('#state').value,
     postCode: document.querySelector('#zip').value,
     orderNumber: Math.random().toString(20).substr(2, 15),
+    orderPlaces: date
   };
 
   // Push singleProduct to cart list
