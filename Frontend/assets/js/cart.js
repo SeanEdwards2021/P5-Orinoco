@@ -215,8 +215,6 @@ function orderTotal(totalCartAmount, discountedValue) {
 
 function saveCustomerDetails() {
 
-  console.log("Customer")
-
   let customers = []
   const localStorageContent = localStorage.getItem('customer');
 
@@ -247,6 +245,43 @@ function saveCustomerDetails() {
   // Push singleProduct to cart list
   customers.push(customerDetails);
   localStorage.setItem('customer', JSON.stringify(customers));
+
+  orderNumber = customerDetails.orderNumber
+  orderDate = customerDetails.orderPlaced
+  saveOrderDetails(orderNumber,orderDate )
+}
+
+// ---------- CREATE ORDER ON LOCAL STORAGE ----------
+
+function saveOrderDetails(orderNumber, orderDate) {
+
+  let orders = []
+  const localStorageContent = localStorage.getItem('orders');
+  let productTotal = document.querySelector('#product_total_amt')
+  let shippingFee = document.querySelector('#shipping_charge')
+  let discount = document.querySelector('#discount_applied')
+  let subtotal = document.querySelector('#total_cart_amt')
+  
+  // Check to see if there is already items in the cart
+  if (localStorageContent === null) {
+    orders = [];
+  } else {
+    orders = JSON.parse(localStorageContent);
+  }
+
+  // Creating product object to push to cart
+  let orderDetails = {
+    productTotal: productTotal.innerHTML,
+    shippingFee: shippingFee.innerHTML,
+    discount: discount.innerHTML,
+    subtotal: subtotal.innerHTML,
+    orderNumber: orderNumber,
+    orderPlaced: orderDate
+  };
+
+  // Push singleProduct to cart list
+  orders.push(orderDetails);
+  localStorage.setItem('orders', JSON.stringify(orders));
 }
 
 
