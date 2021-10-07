@@ -172,7 +172,7 @@ function orderDiscount(totalCartAmount) {
   //Variables used
   let discountCodeUsed =  document.querySelector('#discount_code1').value
   let orderDiscount = document.querySelector('#discount_applied')
-  let confirm = document.querySelector('#confirmFeedback');
+  let confirm = document.querySelector('.confirmFeedback');
 
   // Check if any discount code has been entered
   if (discountCodeUsed === ""){
@@ -189,7 +189,7 @@ function orderDiscount(totalCartAmount) {
     confirm.hideTimeout = setTimeout(() => {
       confirm.classList.remove('confirmFeedback','confirmFeedbackVisible');
     }, 3000);
-
+    
   } else {
 
     // Confirm message of invalid discount code
