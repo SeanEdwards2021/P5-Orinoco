@@ -221,6 +221,10 @@ body {
           justify-content: center !important;
 }
 
+.singleProductAddToCart, .singleProductReturnToHome {
+  margin-bottom: 15px;
+}
+
 #productCounter {
   display: -webkit-box;
   display: -ms-flexbox;
