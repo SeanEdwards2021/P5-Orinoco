@@ -1,4 +1,4 @@
-window.onload = function() {removeAllItems()};
+
 
 // Removes all items currently saved on local storage and updates cart page
 function removeAllItems() {
@@ -26,22 +26,4 @@ function scrollFunction() {
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
-}
-
-// ---------- GET THE CURRENT CART ITEM NUMBER FOR THE NAVBAR CART ----------
-
-function addNumCart() {
-  const localStorageContent = localStorage.getItem('cart');
-  let cartItemsArray = JSON.parse(localStorageContent);
-  let totalQuantityOfProducts = 0
-
-  // Loop through cart array and adds up all the quantities 
-  for(let i=0; i < cartItemsArray.length; i++) {
-    let productQuantity = cartItemsArray[i].quantity
-    totalQuantityOfProducts += productQuantity
-  }
-
-  // Applies current quantity to HTML file
-  let cartNum = document.querySelector("#product-number");
-  cartNum.innerHTML = totalQuantityOfProducts;
 }
