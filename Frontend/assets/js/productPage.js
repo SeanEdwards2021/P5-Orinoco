@@ -10,7 +10,7 @@ let productPrice = document.querySelector(".singleProductPrice");
 let productDescription = document.querySelector(".singleProductDescription");
 let productLenses = document.querySelector(".singleProductLenses");
 let productQuantity = document.querySelector("#productCounterText");
-const btnAddToCart = document.querySelector(".addToCart");
+const btnAddToCart = document.querySelector(".singleProductAddToCart");
 let product = {};
 
 window.onload = function() {init()};
@@ -136,7 +136,6 @@ btnAddToCart.addEventListener('click', () => {
   let confirm = document.querySelector('.confirmFeedback');
   confirm.innerHTML = 'Item Added to cart.';
   confirm.classList.add('confirmFeedbackVisible');
-  console.log("Done")
   confirm.hideTimeout = setTimeout(() => {
     confirm.classList.remove('confirmFeedbackVisible');
   }, 3000);
