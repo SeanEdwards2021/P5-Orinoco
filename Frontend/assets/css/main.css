@@ -520,6 +520,24 @@ hr {
   max-width: 200px;
 }
 
+.productContainerDetails {
+  padding: 5px !important;
+}
+
+.productContainerDetailsRow {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (min-width: 665px) {
+  .productContainerDetailsRow {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
 .productContainerMoreDetails {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -538,14 +556,19 @@ hr {
           align-items: center;
 }
 
-.productContainerDetails {
-  padding: 5px !important;
-}
-
-.productContainerDetailsRow {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+@media screen and (min-width: 665px) {
+  .productContainerMoreDetails {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
 }
 
 .productContainerItemQuantity, .productContainerItemPrice {
@@ -561,8 +584,43 @@ hr {
   padding: 0 !important;
 }
 
+@media screen and (min-width: 665px) {
+  .productContainerItemQuantity, .productContainerItemPrice {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
 .productContainerItemPrice {
   padding: 10px 0 !important;
+}
+
+.productContainerRemoveItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (min-width: 665px) {
+  .productContainerRemoveItem {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
 }
 
 .productHeading {
@@ -578,6 +636,39 @@ hr {
           align-items: center;
 }
 
+@media screen and (min-width: 665px) {
+  .productHeading {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.productHeadingHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .productHeadingHeader {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding-left: 30px;
+  }
+}
+
 .productHeadingHeaderText {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -589,9 +680,38 @@ hr {
   font-size: 24px;
 }
 
+@media screen and (min-width: 665px) {
+  .productHeadingHeaderText {
+    font-size: 28px;
+    padding-left: 16px;
+  }
+}
+
+@media screen and (min-width: 665px) {
+  .productHeadingEmptyCart {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    margin-right: 10px;
+  }
+}
+
 .productImage {
   max-height: 150px;
   width: 220px;
+}
+
+@media screen and (min-width: 665px) {
+  .productImage {
+    margin-right: 40px;
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .productImage {
+    width: 250px;
+  }
 }
 
 .productTitle {
@@ -606,6 +726,14 @@ hr {
       -ms-flex-pack: center;
           justify-content: center;
   margin: 15px 0 !important;
+}
+
+@media screen and (min-width: 665px) {
+  .productLens {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
 }
 
 .productRemoveItemButton {
