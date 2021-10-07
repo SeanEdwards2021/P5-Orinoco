@@ -1,9 +1,14 @@
 // ---------- GLOBAL VARIABLES ----------
 const localStorageContent = localStorage.getItem('customer');
 const customers = JSON.parse(localStorageContent);
-const cartContainer = document.querySelector('#confirmProductContainer')
+
 const localStorageContentCart = localStorage.getItem('cart');
 const cartItems = JSON.parse(localStorageContentCart);
+
+const localStorageContentOrders = localStorage.getItem('orders');
+const orders = JSON.parse(localStorageContentOrders);
+
+const cartContainer = document.querySelector('#confirmProductContainer')
 
 // ---------- VARIABLES FOR DOM ----------
 let firstName = document.querySelector(".firstName");
@@ -13,9 +18,11 @@ let shippingAddress = document.querySelector(".shippingAddress");
 let paymentMethod = document.querySelector(".paymentMethod");
 let emailConfirmation = document.querySelector(".email");
 
-let productLenses = document.querySelector(".singleProductLenses");
-let productQuantity = document.querySelector("#productCounterText");
-const btnAddToCart = document.querySelector(".addToCart");
+let productPrice = document.querySelector(".confirmationProductTotal");
+let shippingFee = document.querySelector(".confirmationShippingFee");
+let discount = document.querySelector(".confirmationDiscount");
+let subtotal = document.querySelector(".confirmationSubtotal");
+
 
 window.onload = function() {init()};
 
@@ -32,6 +39,10 @@ function formDetails() {
   shippingAddress.innerHTML = customers[0].address
   paymentMethod.innerHTML = customers[0].paymentMethod
   emailConfirmation.innerHTML = "We will be sending shipping confirmation email to " + customers[0].emailAddress + " when the item shipped successfully!"
+  productPrice.innerHTML = "£" + orders[0].productTotal
+  shippingFee.innerHTML = orders[0].shippingFee
+  discount.innerHTML = "£" +  orders[0].discount
+  subtotal.innerHTML = "£" +  orders[0].subtotal
 }
 
 // Creates cart page with the items from local storage
