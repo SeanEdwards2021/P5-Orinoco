@@ -172,7 +172,8 @@ function orderDiscount(totalCartAmount) {
   //Variables used
   let discountCodeUsed =  document.querySelector('#discount_code1').value
   let orderDiscount = document.querySelector('#discount_applied')
-  let confirm = document.querySelector('.confirmFeedback');
+  let confirmValid = document.querySelector('.confirmFeedback');
+  let confirmInvalid = document.querySelector('.confirmFeedbackInvalid');
 
   // Check if any discount code has been entered
   if (discountCodeUsed === ""){
@@ -183,20 +184,21 @@ function orderDiscount(totalCartAmount) {
     let discountPercent = discountCodes[discountCodeUsed]
     discountedValue = (discountPercent * totalCartAmount).toFixed(2)
 
-    // Confirm message of discount code being applied to the price of products
-    confirm.innerHTML = 'Discount Code Applied';
-    confirm.classList.add('confirmFeedback','confirmFeedbackVisible');
-    confirm.hideTimeout = setTimeout(() => {
-      confirm.classList.remove('confirmFeedback','confirmFeedbackVisible');
-    }, 3000);
-    
+  // Confirm message of discount code being applied to the price of products
+
+  confirmValid.innerHTML = 'Discount Code Applied';
+  confirmValid.classList.add('confirmFeedbackVisible');
+  confirmValid.hideTimeout = setTimeout(() => {
+    confirmValid.classList.remove('confirmFeedbackVisible');
+  }, 3000);
+
   } else {
 
     // Confirm message of invalid discount code
-    confirm.innerHTML = 'Invalid Discount Code';
-    confirm.classList.add('confirmFeedbackInvalid','confirmFeedbackVisible');
-    confirm.hideTimeout = setTimeout(() => {
-      confirm.classList.remove('confirmFeedbackInvalid','confirmFeedbackVisible');
+    confirmInvalid.innerHTML = 'Invalid Discount Code';
+    confirmInvalid.classList.add('confirmFeedbackVisible');
+    confirmInvalid.hideTimeout = setTimeout(() => {
+      confirmInvalid.classList.remove('confirmFeedbackVisible');
     }, 3000);
   }
 
