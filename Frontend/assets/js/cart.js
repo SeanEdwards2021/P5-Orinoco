@@ -74,20 +74,20 @@ function cartProductList() {
       <div id="${i}" class="productContainerImage col-md-5 col-11 mx-auto">
         <img src="${productImg}" class="productImage" alt="cart img">
       </div>
-      <div class="col-md-7 col-11 mx-auto px-4 mt-2">
-        <div class="row">
-          <div class="col-6">
+      <div class="productContainerDetails col-sm-12 col-lg-7 mx-auto px-4 mt-2">
+        <div class="row productContainerDetailsRow">
+          <div class="col-sm-12col-lg-6">
           <h4 class="mb-4 productTitle">${productName}</h4>
           <p class="mb-2 productLens">${productLens}</p>
         </div>
       </div>
       <div class="row productContainerMoreDetails">
-        <div class="productContainerItemQuantity col-4">
+        <div class="productContainerItemQuantity col-sm-12 col-lg-6">
           <button class="productItemPlus btn btn-outline-primary" id="productCounterDecrease" onClick="quantityChange(${i}, 0)">-</button>
           <span id="${i}" class="productItemQuantity productCounterText">${productQuantity}</span>
           <button class="productItemMinus btn btn-outline-primary" id="productCounterIncrease" onClick="quantityChange(${i}, 1)">+</button>
         </div>
-        <div class="col-4 productContainerItemPrice">
+        <div class="productContainerItemPrice col-sm-12 col-lg-6">
           <h3 class="productItemPrice">£<span>${totalProductPrice}</span></h3>
         </div>
         <div id="col-4 productContainerRemoveItem">
