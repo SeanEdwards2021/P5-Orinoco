@@ -236,6 +236,7 @@ function saveCustomerDetails() {
     country: document.querySelector('#country').value,
     county: document.querySelector('#state').value,
     postCode: document.querySelector('#zip').value,
+    orderNumber: Math.random().toString(20).substr(2, 15),
   };
 
   // Push singleProduct to cart list
