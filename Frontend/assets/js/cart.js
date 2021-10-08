@@ -241,7 +241,8 @@ function saveCustomerDetails() {
     county: document.querySelector('#state').value,
     postCode: document.querySelector('#zip').value,
     orderNumber: Math.random().toString(20).substr(2, 15),
-    orderPlaced: date
+    orderPlaced: date,
+    paymentMethod: document.querySelector('input[name="paymentMethod"]:checked').value
   };
 
   // Push singleProduct to cart list
