@@ -29,6 +29,7 @@ window.onload = function() {init()};
 function init() {
   formDetails()
   cartProductList()
+  removeAllItems()
 }
 
 function formDetails() {
