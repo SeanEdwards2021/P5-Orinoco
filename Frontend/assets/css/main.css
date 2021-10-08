@@ -768,7 +768,7 @@ hr {
   margin-top: 10px;
 }
 
-#confirmProductContainer {
+.orderInfo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -776,32 +776,89 @@ hr {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
 }
 
-#confirmProductContainerRecord {
+@media screen and (min-width: 665px) {
+  .orderInfo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+.orderInfo td {
+  padding: 0 12px !important;
+}
+
+.confirmProductContainerImage {
+  width: 25%;
+  padding: 12px 0 !important;
+}
+
+@media screen and (min-width: 665px) {
+  .confirmProductContainerImage {
+    width: 33%;
+  }
+}
+
+.confirmProductContainerImage img {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  padding: 0 20px;
+  margin-top: 15%;
 }
 
-#confirmProductContainerImage {
-  width: 35%;
+@media screen and (min-width: 665px) {
+  .confirmProductContainerImage img {
+    margin-top: 0 !important;
+  }
 }
 
-#confirmProductContainerInfo {
+@media screen and (min-width: 1024px) {
+  .confirmProductContainerImage img {
+    height: 100px;
+    width: auto;
+  }
+}
+
+.confirmProductContainerInfo {
+  width: 50%;
+}
+
+@media screen and (min-width: 665px) {
+  .confirmProductContainerInfo {
+    width: 33%;
+    padding-left: 50px !important;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .confirmProductContainerInfo {
+    padding-left: 0 !important;
+  }
+}
+
+.confirmProductContainerPrice {
   width: 25%;
 }
 
-#confirmProductContainerPrice {
-  width: 40%;
+@media screen and (min-width: 665px) {
+  .confirmProductContainerPrice {
+    width: 33%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .confirmProductContainerPrice {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 #footer {
