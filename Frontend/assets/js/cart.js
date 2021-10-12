@@ -270,7 +270,7 @@ function saveCustomerDetails() {
     customers = JSON.parse(localStorageContent);
   }
 
-  // Creating product object to push to cart
+  // Creating customer object to push to customer
   let customerDetails = {
     firstName: document.querySelector('#firstName').value,
     lastName: document.querySelector('#lastName').value,
@@ -284,7 +284,7 @@ function saveCustomerDetails() {
     paymentMethod: document.querySelector('input[name="paymentMethod"]:checked').value
   };
 
-  // Push singleProduct to cart list
+  // Push customer to customer list
   customers.push(customerDetails);
   localStorage.setItem('customer', JSON.stringify(customers));
 
@@ -304,14 +304,14 @@ function saveOrderDetails(orderNumber, orderDate) {
   let discount = document.querySelector('#discount_applied')
   let subtotal = document.querySelector('#total_cart_amt')
   
-  // Check to see if there is already items in the cart
+  // Check to see if there is already orders in local storage
   if (localStorageContent === null) {
     orders = [];
   } else {
     orders = JSON.parse(localStorageContent);
   }
 
-  // Creating product object to push to cart
+  // Creating order object to push to orders
   let orderDetails = {
     productTotal: productTotal.innerHTML,
     shippingFee: shippingFee.innerHTML,
@@ -321,7 +321,7 @@ function saveOrderDetails(orderNumber, orderDate) {
     orderPlaced: orderDate
   };
 
-  // Push singleProduct to cart list
+  // Push order to orders list
   orders.push(orderDetails);
   localStorage.setItem('orders', JSON.stringify(orders));
 }
