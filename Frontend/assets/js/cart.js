@@ -2,6 +2,7 @@
 const localStorageContent = localStorage.getItem('cart');
 const cartItems = JSON.parse(localStorageContent);
 const cartContainer = document.querySelector('#cartContainer')
+const removeItemComfirmation = document.querySelector('.removeItemComfirmation')
 
 // ---------- FUNCTION TO RUN WHEN PAGE LOADS ----------
 window.onload = function() {init()};
@@ -25,10 +26,48 @@ function init() {
 
 // ---------- FUNCTIONS CREATING HTML PAGE ELEMENTS ----------
 
+// Remove item confirmation
+function removeItemConfirmation(id) {
+  removeItemComfirmation.innerHTML = `
+  <div class="container d-flex justify-content-center">
+    <div id="my-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content border-0">
+          <div class="modal-body p-0">
+            <div class="card border-0 p-sm-3 p-2 justify-content-center">
+              <div class="card-header pb-0 bg-white border-0 ">
+                <div class="row">
+                  <div class="col ml-auto">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                </div>
+                <p class="font-weight-bold mb-2">Are you sure you wanna delete this ?</p>
+                <p class="text-muted ">This change will reflect in your portal after an hour.</p>
+              </div>
+              <div class="card-body px-sm-4 mb-2 pt-1 pb-0">
+                <div class="row justify-content-end no-gutters">
+                  <div class="col-auto">
+                    <button type="button" class="btn btn-light text-muted" data-dismiss="modal">Cancel</button>
+                  </div>
+                  <div class="col-auto">
+                    <button type="button" id="${id}" class="btn btn-danger px-4" data-dismiss="modal" onClick="removeSingleProduct(this.id)">Delete</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
 // Creates empty cart page
 function emptyCart() {
-  let section = document.querySelector('.cartSection')
-  section.innerHTML = `
+  const emptyCart = document.querySelector('.cartSection')
+  emptyCart.innerHTML = `
     <div class="container card">
       <div class="row shadow">
         <div class="col-md-12 mt-5">
@@ -91,7 +130,7 @@ function cartProductList() {
           <h3 class="productItemPrice">£<span>${totalProductPrice}</span></h3>
         </div>
         <div class="col-4 productContainerRemoveItem">
-          <button id="${i}" class="productRemoveItemButton btn btn-danger btn-sm mt-3" onClick="removeSingleProduct(this.id)">Remove Item</button>
+          <button id="${i}" class="productRemoveItemButton btn btn-danger btn-sm mt-3" onClick="removeItemConfirmation(this.id)" data-toggle="modal" data-target="#my-modal">Remove Item</button>
         </div>
       </div>`;
       cartContainer.appendChild(product);
