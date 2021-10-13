@@ -43,8 +43,7 @@ function removeItemConfirmation(id) {
                     </button>
                   </div>
                 </div>
-                <p class="font-weight-bold mb-2">Are you sure you wanna delete this ?</p>
-                <p class="text-muted ">This change will reflect in your portal after an hour.</p>
+                <p class="font-weight-bold mb-2">Are you sure you wanna delete this product from the cart?</p>
               </div>
               <div class="card-body px-sm-4 mb-2 pt-1 pb-0">
                 <div class="row justify-content-end no-gutters">
