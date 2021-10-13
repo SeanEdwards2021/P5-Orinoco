@@ -2,7 +2,7 @@
 const localStorageContent = localStorage.getItem('cart');
 const cartItems = JSON.parse(localStorageContent);
 const cartContainer = document.querySelector('#cartContainer')
-const removeItemConfirmation = document.querySelector('.removeItemComfirmation')
+const removeItemConfirmation = document.querySelector('.removeItemConfirmation')
 
 // ---------- FUNCTION TO RUN WHEN PAGE LOADS ----------
 window.onload = function() {init()};
