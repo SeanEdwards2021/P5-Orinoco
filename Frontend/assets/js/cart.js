@@ -2,7 +2,7 @@
 const localStorageContent = localStorage.getItem('cart');
 const cartItems = JSON.parse(localStorageContent);
 const cartContainer = document.querySelector('#cartContainer')
-const removeItemComfirmation = document.querySelector('.removeItemComfirmation')
+const removeItemConfirmation = document.querySelector('.removeItemComfirmation')
 
 // ---------- FUNCTION TO RUN WHEN PAGE LOADS ----------
 window.onload = function() {init()};
@@ -28,7 +28,7 @@ function init() {
 
 // Remove item confirmation
 function removeItemConfirmation(id) {
-  removeItemComfirmation.innerHTML = `
+  removeItemConfirmation.innerHTML = `
   <div class="container d-flex justify-content-center">
     <div id="my-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
