@@ -342,3 +342,17 @@ function addNumCart() {
   let cartNum = document.querySelector("#product-number");
   cartNum.innerHTML = totalQuantityOfProducts;
 }
+
+// Validation for checkout form
+(function() {
+  window.addEventListener('load', function() {
+    var form = document.getElementById('needs-validation');
+    form.addEventListener('submit', function(event) {
+      if (form.checkValidity() === false) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    }, false);
+  }, false);
+})();
