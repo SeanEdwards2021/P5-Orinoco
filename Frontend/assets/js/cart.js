@@ -344,15 +344,15 @@ function addNumCart() {
 }
 
 // Validation for checkout form
-(function() {
-  window.addEventListener('load', function() {
-    let form = document.getElementById('needs-validation');
-    form.addEventListener('submit', function(event) {
-      if (form.checkValidity() === false) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-      form.classList.add('was-validated');
-    }, false);
-  }, false);
-})();
+function formValidation () {
+  let form = document.getElementById('needs-validation');
+
+  if (form.checkValidity() === false) {
+    event.preventDefault();
+    event.stopPropagation();
+  } else {
+    saveCustomerDetails()
+  }
+
+  form.classList.add('was-validated');
+}
