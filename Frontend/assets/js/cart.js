@@ -269,15 +269,6 @@ function addNumCart() {
   cartNum.innerHTML = totalQuantityOfProducts;
 }
 
-
-
-
-
-
-
-
-
-
 // POST DATA FROM USER 
 // ADD event to the button submit
 let submitButton = document.querySelector('#submitOrder')
