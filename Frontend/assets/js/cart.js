@@ -343,16 +343,73 @@ function addNumCart() {
   cartNum.innerHTML = totalQuantityOfProducts;
 }
 
-// Validation for checkout form
-function formValidation () {
+// POST DATA FROM USER 
+// ADD event to the button submit
+let submitButton = document.querySelector('#submitOrder')
+submitButton.addEventListener('click', ($event) => {
+  $event.preventDefault();
+  let products = [];
+
+  //get id prod and push it in array
+  let cartArray = JSON.parse(localStorage.getItem('cart'));
+  for (let i = 0; i < cartItems.length; i++) {
+    products.push(cartItems[i].prodId);
+  }
+
+  // Get current date for orderPlaced key in customerDetails object
+  let today = new Date();
+  let date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+
+  // Object stores informations from form
+  let contact = {
+    firstName: document.querySelector('#firstName').value,
+    lastName: document.querySelector('#lastName').value,
+    emailAddress: document.querySelector('#email').value,
+    address: document.querySelector('#address').value,
+    country: document.querySelector('#country').value,
+    county: document.querySelector('#state').value,
+    postCode: document.querySelector('#zip').value,
+    orderPlaced: date,
+    paymentMethod: document.querySelector('input[name="paymentMethod"]:checked').value
+  }
+
+  let data = {
+    contact: contact,
+    products: products,
+  }
+
+  console.log(data);
+
   let form = document.getElementById('needs-validation');
 
   if (form.checkValidity() === false) {
-    event.preventDefault();
-    event.stopPropagation();
+    $event.preventDefault();
+    $event.stopPropagation();
   } else {
-    saveCustomerDetails()
+    makeRequest(data);
   }
-
   form.classList.add('was-validated');
-}
+});
+
+//Send inforamtion from user to api
+function makeRequest(data) {
+  fetch('http://localhost:3000/api/cameras/order', {
+    method: 'POST',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  }).then((response) => {
+    return response.json();
+  }).then((data) => {
+    console.log(data);
+
+    orderId = data.orderId;
+    sessionStorage.setItem("orderId", orderId);
+
+    //location.replace('orderConfirmation.html');
+
+  }).catch((err) => {
+    console.log(err);
+  })
+};
