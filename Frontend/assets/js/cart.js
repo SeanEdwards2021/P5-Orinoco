@@ -348,7 +348,10 @@ function addNumCart() {
 let submitButton = document.querySelector('#submitOrder')
 submitButton.addEventListener('click', ($event) => {
   $event.preventDefault();
+
+  const localStorageContent = localStorage.getItem('orders');
   let products = [];
+  let orders = []
 
   //get id prod and push it in array
   let cartArray = JSON.parse(localStorage.getItem('cart'));
@@ -386,6 +389,13 @@ submitButton.addEventListener('click', ($event) => {
     $event.preventDefault();
     $event.stopPropagation();
   } else {
+      if (localStorageContent === null) {
+        orders = [];
+      } else {
+        orders = JSON.parse(localStorageContent);
+      }
+    orders.push(data);
+    localStorage.setItem('orders', JSON.stringify(orders));
     makeRequest(data);
   }
   form.classList.add('was-validated');
