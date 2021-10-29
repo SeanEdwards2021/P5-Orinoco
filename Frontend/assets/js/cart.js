@@ -364,10 +364,10 @@ submitButton.addEventListener('click', ($event) => {
   let contact = {
     firstName: document.querySelector('#firstName').value,
     lastName: document.querySelector('#lastName').value,
-    emailAddress: document.querySelector('#email').value,
+    email: document.querySelector('#email').value,
     address: document.querySelector('#address').value,
+    city: document.querySelector('#state').value,
     country: document.querySelector('#country').value,
-    county: document.querySelector('#state').value,
     postCode: document.querySelector('#zip').value,
     orderPlaced: date,
     paymentMethod: document.querySelector('input[name="paymentMethod"]:checked').value
