@@ -1,13 +1,5 @@
 // ---------- GLOBAL VARIABLES ----------
-const localStorageContent = localStorage.getItem('customer');
-const customers = JSON.parse(localStorageContent);
-
-const localStorageContentCart = localStorage.getItem('cart');
-const cartItems = JSON.parse(localStorageContentCart);
-
-const localStorageContentOrders = localStorage.getItem('orders');
-const orders = JSON.parse(localStorageContentOrders);
-
+const orders = JSON.parse(localStorage.getItem('orders'));
 const cartContainer = document.querySelector('#confirmProductContainer')
 
 // ---------- VARIABLES FOR DOM ----------
@@ -33,16 +25,16 @@ function init() {
 }
 
 function formDetails() {
-  firstName.innerHTML = "Hello, " + customers[0].firstName
-  orderDate.innerHTML = customers[0].orderPlaced
-  orderNumber.innerHTML = customers[0].orderNumber
-  shippingAddress.innerHTML = customers[0].address
-  paymentMethod.innerHTML = customers[0].paymentMethod
-  emailConfirmation.innerHTML = "We will be sending shipping confirmation email to " + customers[0].emailAddress + " when the item shipped successfully!"
-  productPrice.innerHTML = "£" + orders[0].productTotal
-  shippingFee.innerHTML = orders[0].shippingFee
-  discount.innerHTML = "£" +  orders[0].discount
-  subtotal.innerHTML = "£" +  orders[0].subtotal
+  firstName.innerHTML = "Hello, " + orders[0].contact.firstName
+  orderDate.innerHTML = orders[0].contact.orderPlaced
+  orderNumber.innerHTML = sessionStorage.getItem('orderId')
+  shippingAddress.innerHTML = orders[0].contact.address
+  paymentMethod.innerHTML = orders[0].contact.paymentMethod
+  emailConfirmation.innerHTML = "We will be sending shipping confirmation email to " + orders[0].contact.email + " when the item shipped successfully!"
+  productPrice.innerHTML = "£" + orders[0].orderTotals.productTotal
+  shippingFee.innerHTML = orders[0].orderTotals.shippingFee
+  discount.innerHTML = "£" +  orders[0].orderTotals.discount
+  subtotal.innerHTML = "£" +  orders[0].orderTotals.subtotal
 }
 
 // Creates cart page with the items from local storage
@@ -50,15 +42,15 @@ function cartProductList() {
   cartContainer.innerHTML = ''
 
   // Loops through each object of API and extract the product data
-  for (let i = 0; i < cartItems.length; i++) {
+  for (let i = 0; i < orders[0].products.length; i++) {
 
     // Product Value Variables
-    let productImg = cartItems[i].imageUrl
-    let productName = cartItems[i].name
-    let productPriceString = cartItems[i].price.toString();
+    let productImg = orders[0].products[i].imageUrl
+    let productName = orders[0].products[i].name
+    let productPriceString = orders[0].products[i].price.toString();
     let productPrice = productPriceString.substring(0, 3);
-    let productLens = cartItems[i].selectLenses
-    let productQuantity = cartItems[i].quantity
+    let productLens = orders[0].products[i].selectLenses
+    let productQuantity = orders[0].products[i].quantity
     let totalProductPrice = (productPrice * productQuantity);
 
     // Create & Append New Product
