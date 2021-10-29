@@ -88,4 +88,5 @@ function cartProductList() {
 // Removes all items currently saved on local storage and updates cart page
 function removeAllItems() {
   localStorage.clear();
+  sessionStorage.clear();
 }
