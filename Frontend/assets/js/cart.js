@@ -343,6 +343,15 @@ function addNumCart() {
   cartNum.innerHTML = totalQuantityOfProducts;
 }
 
+
+
+
+
+
+
+
+
+
 // POST DATA FROM USER 
 // ADD event to the button submit
 let submitButton = document.querySelector('#submitOrder')
@@ -350,13 +359,14 @@ submitButton.addEventListener('click', ($event) => {
   $event.preventDefault();
 
   const localStorageContent = localStorage.getItem('orders');
+  let productsID = [];
   let products = [];
   let orders = []
 
   //get id prod and push it in array
-  let cartArray = JSON.parse(localStorage.getItem('cart'));
   for (let i = 0; i < cartItems.length; i++) {
-    products.push(cartItems[i].prodId);
+    productsID.push(cartItems[i].prodId);
+    products.push(cartItems[i]);
   }
 
   // Get current date for orderPlaced key in customerDetails object
@@ -378,7 +388,13 @@ submitButton.addEventListener('click', ($event) => {
 
   let data = {
     contact: contact,
+    products: productsID,
+  }
+
+  let orderDetails = {
+    contact: contact,
     products: products,
+    //orderDetails: orderDetails
   }
 
   console.log(data);
@@ -394,14 +410,14 @@ submitButton.addEventListener('click', ($event) => {
       } else {
         orders = JSON.parse(localStorageContent);
       }
-    orders.push(data);
+    orders.push(orderDetails);
     localStorage.setItem('orders', JSON.stringify(orders));
     makeRequest(data);
   }
   form.classList.add('was-validated');
 });
 
-//Send inforamtion from user to api
+//Send information from user to api
 function makeRequest(data) {
   fetch('http://localhost:3000/api/cameras/order', {
     method: 'POST',
