@@ -373,7 +373,7 @@ submitButton.addEventListener('click', ($event) => {
   let today = new Date();
   let date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
 
-  // Object stores informations from form
+  // Object stores information from form
   let contact = {
     firstName: document.querySelector('#firstName').value,
     lastName: document.querySelector('#lastName').value,
@@ -386,18 +386,23 @@ submitButton.addEventListener('click', ($event) => {
     paymentMethod: document.querySelector('input[name="paymentMethod"]:checked').value
   }
 
-  let data = {
-    contact: contact,
-    products: productsID,
+  let orderTotals = {
+    productTotal: document.querySelector('#product_total_amt').innerHTML,
+    shippingFee: document.querySelector('#shipping_charge').innerHTML,
+    discount: document.querySelector('#discount_applied').innerHTML,
+    subtotal: document.querySelector('#total_cart_amt').innerHTML,
   }
 
   let orderDetails = {
     contact: contact,
     products: products,
-    //orderDetails: orderDetails
+    orderTotals: orderTotals
   }
 
-  console.log(data);
+  let data = {
+    contact: contact,
+    products: productsID,
+  }
 
   let form = document.getElementById('needs-validation');
 
@@ -428,12 +433,11 @@ function makeRequest(data) {
   }).then((response) => {
     return response.json();
   }).then((data) => {
-    console.log(data);
 
     orderId = data.orderId;
     sessionStorage.setItem("orderId", orderId);
 
-    //location.replace('orderConfirmation.html');
+    location.replace('orderConfirmation.html');
 
   }).catch((err) => {
     console.log(err);
