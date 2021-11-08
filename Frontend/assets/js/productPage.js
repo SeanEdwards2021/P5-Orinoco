@@ -111,13 +111,6 @@ btnAddToCart.addEventListener('click', () => {
   let cartItems = []
   const localStorageContent = localStorage.getItem('cart');
 
-  // Check to see if there is already items in the cart
-  if (localStorageContent === null) {
-    cartItems = [];
-  } else {
-    cartItems = JSON.parse(localStorageContent);
-  }
-
   // Creating product object to push to cart
   let singleProduct = {
     prodId: product._id,
@@ -128,8 +121,27 @@ btnAddToCart.addEventListener('click', () => {
     quantity: parseInt(productQuantity.innerHTML)
   };
 
-  // Push singleProduct to cart list
-  cartItems.push(singleProduct);
+  // Check to see if there is already items in the cart
+  if (localStorageContent === null) {
+    cartItems = [];
+  } else {
+    cartItems = JSON.parse(localStorageContent);
+  }
+
+  // if the product is not in the cart add it
+  if (cartItems.length == 0) {
+    cartItems.push(singleProduct);
+  } else {
+    // if the product with same id and lens is already in the cart then add old quantity and new quantity
+    let index = cartItems.findIndex(
+      element => element.prodId === singleProduct.prodId && element.selectLenses === singleProduct.selectLenses
+    );
+    if (index != -1) {
+      cartItems[index].quantity += singleProduct.quantity;
+    } else {
+      cartItems.push(singleProduct);
+    }
+  }
   localStorage.setItem('cart', JSON.stringify(cartItems));
 
   // Add confirmation message
