@@ -341,7 +341,7 @@ submitButton.addEventListener('click', ($event) => {
 
 //Send information from user to api
 function makeRequest(data) {
-  fetch('http://localhost:3000/api/cameras/order', {
+  fetch('https://orinoco-op.herokuapp.com/api/cameras/order', {
     method: 'POST',
     headers: {
       "Content-Type": "application/json"

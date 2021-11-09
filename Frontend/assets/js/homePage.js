@@ -2,7 +2,7 @@
 const productsContainer = document.querySelector("#productContainer");
 
 // ---------- API URL ----------
-const url = 'http://localhost:3000/api/cameras';
+const url = 'https://orinoco-op.herokuapp.com/api/cameras';
 
 
 // ---------- GET PRODUCTS FROM API AND CREATE PRODUCT SECTION ON HTML DOCUMENT
